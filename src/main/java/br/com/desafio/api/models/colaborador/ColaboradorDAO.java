@@ -31,7 +31,11 @@ public interface ColaboradorDAO extends JpaRepository<Colaborador, Long>{
 			  value = "SELECT * FROM colaborador c WHERE c.id=:id", 
 			  nativeQuery = true)
 	public Colaborador encontrarPorId(@Param("id") Double id);
-	
+		
+	@Query(
+			  value = "SELECT * FROM colaborador c WHERE c.cpf=:cpf AND c.nome=:nome", 
+			  nativeQuery = true)
+	public Colaborador encontrarPoCpfNome(@Param("cpf") String cpf, @Param("nome") String nome);
 	/*INSERTS*/
 	
 	@Modifying
@@ -58,8 +62,5 @@ public interface ColaboradorDAO extends JpaRepository<Colaborador, Long>{
 			  nativeQuery = true)
 	public void deletarPorId(@Param("id") Double id);
 	
-	
-	
 
-	
 }

@@ -2,9 +2,6 @@ package br.com.desafio.api.models.coffee;
 
 
 import java.sql.Date;   
-import java.time.LocalDateTime;
-
-import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 

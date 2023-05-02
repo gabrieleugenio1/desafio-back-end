@@ -22,7 +22,7 @@ import br.com.desafio.api.models.colaborador.ColaboradorDAO;
 import br.com.desafio.api.utils.ValidarCPF;
 
 @RestController
-@RequestMapping("/colaborador/")
+@RequestMapping("/colaborador")
 public class ColaboradorController {
 	
     @Autowired       
@@ -68,7 +68,7 @@ public class ColaboradorController {
 	    		int existeColaborador = ColaboradorDAO.countCpfNome(colaborador.getCpf(), colaborador.getNome());
 	    		if(existeColaborador == 1 || existeColaborador == 0) {
 	    			ColaboradorDAO.AlterarColaborador(colaborador.getNome(), colaborador.getCpf());		
-	    			 return ResponseEntity.ok().body("Alterado com sucesso!");
+	    			return ResponseEntity.ok().body("Alterado com sucesso!");
 	    		} else {	      
 	    			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Nome cadastrado");
 	            }  	   
